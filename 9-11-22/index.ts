@@ -12,6 +12,6 @@ const sumArrry = (arr: Array<number>): number => {
 
 type Reducer = (acc: number, curr: number, idx?: number, arr?: number[]) => number;
 const testArrays = {one: [1, 2, 3]};
-const reducer: Reducer = ((acc: number, curr: number, idx?: number, arr?: number[]): number => acc + curr);
+const reducer: Reducer = ((acc: number, curr: number) => acc + curr);
 const _sumArr = (arr: number[], reducer: Reducer): number => arr.reduce(reducer, 0);
 const result = _sumArr(testArrays.one, reducer);

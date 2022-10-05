@@ -47,6 +47,22 @@ const minSumArrLoop = (arr) => {
   return maxSoFar
 }
 
+const slideingWindowApproach = nums => {
+  let maxSoFar = nums[0];
+  let currSum = 0;
+
+  for(let i = 0; i < nums.length; i++) {
+    if(currSum < 0) {
+      currSum = 0;
+    }
+
+    currSum += nums[i];
+    maxSoFar = Math.max(maxSoFar, currSum);
+  }
+
+  return maxSoFar;
+}
+
 const test = () => {
   const arr = [-2,-1];
 

@@ -26,10 +26,31 @@ const maxSumArr = (num) => {
   
 }
 
+const minSumArrLoop = (arr) => {
+  let maxSoFar = 0;
+  let maxEndingHere = 0;
+  let size = arr.length;
+
+  for(let i = 0; i < size; i++) {
+    maxEndingHere = maxEndingHere + arr[i];
+
+    if(maxEndingHere < 0) {
+      maxEndingHere = 0;
+    }
+
+    if(maxSoFar < maxEndingHere) {
+      maxSoFar = maxEndingHere;
+    }
+
+  }
+
+  return maxSoFar
+}
+
 const test = () => {
-  const arr = [-2,1,-3,4,-1,2,1,-5,4];
-  maxSumArr(arr)
-  console.log(maxSoFar);
+  const arr = [-2,-1];
+
+  console.log(  minSumArrLoop(arr));
 }
 
 test();

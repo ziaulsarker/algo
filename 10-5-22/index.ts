@@ -30,6 +30,7 @@ const swap2 = (arr: Array<number>) => {
     // sort
     arr.sort((a, b) => a - b);
 
+    // itterate over sorted arrays
     for(let i = 0; i < arr.length - 1; i+=2) {
       swap(arr, i, i + 1);
     }

@@ -20,11 +20,29 @@ const indexArr = (arr) => {
 }
 
 
+let aTest = [];
+
+const indexArrRecussion = (arr, size = arr.length - 1) => {
+  if (size < 0) return; //
+
+  const hasItem = arr.indexOf(size) !== -1; 
+
+  if (hasItem) {
+    aTest.unshift(size)
+  } else {
+    aTest.unshift(-1)
+  }
+
+
+
+  return indexArrRecussion(arr, size - 1);
+
+}
 
 const test = () => {
   const arr = [18,-1,6,1,9,3,2,7,4,-1];
-  console.log(indexArr(arr))
-  console.log(arr)
+  indexArrRecussion(arr);
+  console.log(aTest)
 }
 
 test();

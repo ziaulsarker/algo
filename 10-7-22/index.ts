@@ -4,13 +4,13 @@
 
 
 const sort1ToN = (arr, size) => {
-  for (let i = 0; i < size; i++) {
-    for (let j = i; j < arr.length; j++) {
-      if(arr[i] > arr[j]) {
-        const temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-      }
+  for (let i = 0; i < size - 1; i++) {
+    if(arr[i] > arr[i + 1]) {
+      const temp = arr[i];
+      arr[i] = arr[i+1];
+      arr[i+1] = temp;
+
+      i = -1;
     }
   }
 

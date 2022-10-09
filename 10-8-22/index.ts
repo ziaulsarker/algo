@@ -62,19 +62,17 @@ c.right = f;
 //   return treeIncludesTarget;
 // }
 
-// const treeIncludesRecursiveDepthFirst = (root, target) => {
-//   if(root === null) return [];
-//   if(root.val === target) return true;
+const treeIncludesRecursiveDepthFirst = (root, target) => {
+  if(root === null) return false;
+  if(root.val === target) return true;
+
+  return  treeIncludesRecursiveDepthFirst(root.left, target) || treeIncludesRecursiveDepthFirst(root.right, target);
+}
 
 
-//   const right = treeIncludesRecursiveDepthFirst(root.right);
-//   const left = treeIncludesRecursiveDepthFirst(root.left);
-
-//   return [root.val, ...right, ...left];
-// }
-
-
-// console.log(treeIncludesRecursiveDepthFirst(a))
+console.log(treeIncludesRecursiveDepthFirst(a, 'f'))
+console.log(treeIncludesRecursiveDepthFirst(a, 'c'))
+console.log(treeIncludesRecursiveDepthFirst(a, 'g'))
 
 
 
@@ -103,7 +101,7 @@ const treeIncludesBreadthFirst = (root, target) => {
 }
 
 
-console.log(treeIncludesBreadthFirst(a, 'f'));
-console.log(treeIncludesBreadthFirst(a, 'c'));
-console.log(treeIncludesBreadthFirst(a, 'a'));
-console.log(treeIncludesBreadthFirst(a, 'g'));
+// console.log(treeIncludesBreadthFirst(a, 'f'));
+// console.log(treeIncludesBreadthFirst(a, 'c'));
+// console.log(treeIncludesBreadthFirst(a, 'a'));
+// console.log(treeIncludesBreadthFirst(a, 'g'));

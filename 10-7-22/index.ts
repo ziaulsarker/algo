@@ -18,7 +18,7 @@ const sort1ToN = (arr, size) => {
 }
 
 const test = () => {
-  const arr = [8,8,6,9,9,3,2,7,4,9,9,9,10];
+  const arr = [8,5,6,1,9,3,2,7,4,10];
   const size = arr.length;
 
   console.log(sort1ToN(arr, size));

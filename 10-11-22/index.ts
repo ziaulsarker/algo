@@ -37,21 +37,18 @@
 
 
 const pivotIndex = nums => {
-  let total = 0;
+  let rightSum = nums.reduce((acc, curr) => acc + curr);
   let leftSum = 0;
 
   for (let i = 0; i < nums.length; i++) {
-    total += nums[i];
-  }
-
-  for(let i = 0; i < nums.length; i++) {
-    const rightSum = total - nums[i] - leftSum;
+    const curr = nums[i];
+    rightSum -= curr;
 
     if(leftSum === rightSum) {
       return i;
     }
 
-    leftSum += nums[i]
+    leftSum += curr
   }
 
   return -1;

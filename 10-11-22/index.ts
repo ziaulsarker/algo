@@ -53,9 +53,6 @@ const pivotIndex = nums => {
 
   return -1;
 
-
-
-
 };
 
 

@@ -39,5 +39,17 @@ const isPalindrome = num => {
 
    return true;
 
+}
 
+const isPalindromeNum = num => {
+  let copy = num;
+  let reverse = 0;
+
+  while(copy > 0) {
+    const digit = copy % 10;
+    reverse = reverse * 10 + digit
+    copy =  ~~(copy / 10);
+  }
+
+  return reverse === num;
 }

@@ -57,3 +57,20 @@ const isIsomorphic = (s, t) => {
   return tracker;
 
 }
+
+
+const eq = nums => {
+  let leftSum = 0;
+  let rightSum = nums.reduce((acc, curr) => acc + curr, 0);
+  let i = 0;
+  while(i < nums.length) {
+    let temp = nums[i];
+    rightSum = rightSum - temp;
+
+
+    if(rightSum === leftSum) return i;
+
+    leftSum = leftSum + temp;
+
+  }
+}

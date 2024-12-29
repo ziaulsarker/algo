@@ -1,20 +1,21 @@
 import { mkdir } from "fs/promises";
 import path from "path";
-import { exec } from "child_process";
-import puppeteer from "puppeteer";
+import { exec } from 'node:child_process';
 
 const __dirname = path.resolve();
 const currentDate = new Date();
 const dayOfMonth = currentDate.getDate();
 const month = currentDate.getMonth() + 1;
 const year = `${currentDate.getFullYear()}`.slice(2);
-const intededDirectory = path.join(__dirname, `${month}-${dayOfMonth}-${year}`);
+const intendedDirectory = path.join(__dirname, `${month}-${dayOfMonth}-${year}`);
 
 try {
-  const newDatedFolder = await mkdir(intededDirectory, { recursive: true });
+  await mkdir(intendedDirectory, { recursive: true });
+
+ 
   exec(
-    "touch index.ts && tsc --lib 'ESNext, DOM' --init",
-    { cwd: intededDirectory },
+    "touch index.ts module.py && tsc --lib 'ESNext, DOM' --init",
+    { cwd: intendedDirectory },
     (err, stdout, stderr) => {
       if (err) {
         console.error("no ts config command");
@@ -24,7 +25,7 @@ try {
 } catch (err) {
   console.error(err);
 } finally {
-  console.info(`created directory ${intededDirectory}`);
+  console.info(`created directory ${intendedDirectory}`);
 }
 
 // try {

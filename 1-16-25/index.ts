@@ -40,9 +40,7 @@ const maxProfit = function(prices: number[]): number {
   for(let i = 0, j = 1; j < prices.length; i++, j++) {
 
     const buyPrice = prices[i];
-    if(buyPrice > prices[j]) {
-      continue;
-    } 
+
 
     if(buyPrice < prices[j]) {
       totalProfit += prices[j] - buyPrice;
@@ -58,5 +56,3 @@ console.log(maxProfit([7,6,4,3,1]));
 console.log(maxProfit([1,2,3,4,5]))
 
 console.log(maxProfit([7,1,5,3,6,4]));
-
-
